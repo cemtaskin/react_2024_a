@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
-import ExpenseDate from "./components/ExpenseDate";
+import Expenses from "./components/Expense/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   const expenses = [
@@ -39,24 +39,8 @@ function App() {
 
   return (
     <div>
-      <ExpenseItem
-        title={expenses[0].title}
-        amount={expenses[0].amount}
-        date={expenses[0].date}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={expenses[1].title}
-        amount={expenses[1].amount}
-        date={expenses[1].date}
-      ></ExpenseItem>
-
-      <ExpenseItem
-        title={"New Expense (Manually Written)"}
-        amount={100.2}
-        date={new Date()}
-      ></ExpenseItem>
-
-      <ExpenseDate date={new Date()}></ExpenseDate>
+      <NewExpense></NewExpense>
+      <Expenses items={expenses}></Expenses>
     </div>
   );
 }
